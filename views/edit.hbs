@@ -1,0 +1,44 @@
+<form action="/restaurants/detail/{{restaurant.id}}?_method=PUT" method="POST" class="form-content mt-3">
+  <div>
+    <div class="container-name m-2 ">
+      <p>Name:</p>
+      <input type="text" placeholder="enter name" name="name" value="{{restaurant.name}}">
+    </div>
+    <div class="container-name_en my-3 p-2">
+      <p>Name_en:</p>
+      <input type="text" placeholder="enter name_en" name="name_en" value="{{restaurant.name_en}}">
+    </div>
+    <div class="container-category my-3 p-2">
+      <p>Category</p>
+      <input type="text" name="category" placeholder="enter ImageURL" value="{{restaurant.category}}">
+    </div>
+    <div class="container-img my-3 p-2">
+      <p>Image URL</p>
+      <input type="text" name="image" placeholder="enter ImageURL" value="{{restaurant.image}}">
+    </div>
+    <div class="container-location my-3 p-2">
+      <p>Location:</p>
+      <input type="text" placeholder="enter location" name="location" value="{{restaurant.location}}">
+    </div>
+    <div class="container-phone my-3 p-2">
+      <p>Phone:</p>
+      <input type="text" placeholder="enter phone" name="phone" value="{{restaurant.phone}}">
+    </div>
+    <div class="container-google_map my-3 p-2">
+      <p>Google map:</p>
+      <input type="text" placeholder="enter google_map" name="google_map" value="{{restaurant.google_map}}">
+    </div>
+    <div class="container-rating my-3 p-2">
+      <p>Raing:</p>
+      <input type="text" placeholder="enter your rating" name="rating" value="{{restaurant.rating}}">
+    </div>
+    <div class="container-description mt-3 p-2">
+      <p>Description:</p>
+      <input type="text" placeholder="enter your description" name="description" value="{{restaurant.description}}">
+    </div>
+  </div>
+  <div class="container-button p-2">
+    <button type="submit">Save</button>
+    <a href="/restaurants">Back</a>
+  </div>
+</form>
