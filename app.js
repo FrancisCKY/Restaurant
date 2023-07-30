@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const { Op } = require('sequelize')
 const { engine } = require('express-handlebars')
 const db = require('./models')
 const methodOverride = require('method-override')
@@ -26,6 +27,17 @@ app.get('/restaurants', (req, res) => {
   })
     .then((restaurant) => res.render('restaurants', { restaurant }))
     .catch((error) => res.status(422).json(err))
+})
+
+app.get('/restaurants/search', (req, res) => {
+  const keyword = req.query.search?.trim()
+  return Restaurant.findAll({
+    raw: true,
+    where: {
+      name: { [Op.like]: `%${keyword}%` }
+    }
+  })
+    .then((restaurant) => res.render('restaurants', { restaurant }))
 })
 
 app.get('/restaurants/add', (req, res) => {

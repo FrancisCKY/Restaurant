@@ -18,7 +18,7 @@
 <div class="container search-bar">
   <div class="search-bar-outer">
     <div class="search-bar-inner">
-      <form action="/restaurants">
+      <form action="/restaurants/search">
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
           <input type="text" name="search" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
@@ -41,7 +41,9 @@
         <div class="mt-3">
           <a href="/restaurant/{{this.id}}" class="text-secondary">
             <div class="card mb-3">
-              <img class="card-img-top" src="{{this.image}}" alt="Sababa 沙巴巴中東美食">
+              <a href="/restaurants/detail/{{this.id}}">
+                <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+              </a>
               <div class="card-body p-3">
                 <h6 class="card-title mb-1">{{this.name}}</h6>
 
